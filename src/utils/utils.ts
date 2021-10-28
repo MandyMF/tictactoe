@@ -1,7 +1,6 @@
 
 export const isWinner = (board: number[][]) => {
     let flat_board = board.flat();
-    console.log(flat_board);
     const lines = [
       [0, 1, 2],
       [3, 4, 5],

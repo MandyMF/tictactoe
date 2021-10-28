@@ -11,7 +11,7 @@ const Game = styled.div`
   display: flex;
   flex-direction: row;
 `
-const defaultContextValues: ContextType = {
+export const defaultContextValues: ContextType = {
   history: [   
     [[0, 0, 0],
     [0, 0, 0],

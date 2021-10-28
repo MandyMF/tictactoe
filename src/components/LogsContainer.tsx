@@ -21,9 +21,10 @@ const LogsContainer = (props: any) => {
 
     return (
         <LogContent>
-            {win ? <LogHeader> Winner: {current % 2 === 0 ? 'O': 'X' } </LogHeader> :<LogHeader> Next Player: {current % 2 === 0 ? 'X': 'O' } </LogHeader>}
+            {win ? <LogHeader data-testid="logheader"> Winner: {current % 2 === 0 ? 'O': 'X' } </LogHeader> :
+            <LogHeader data-testid="logheader"> Next Player: {current % 2 === 0 ? 'X': 'O' } </LogHeader>}
             <LogButtonList>
-                {history.map((value, index) => <li key={index+"li"}><LogButton key={index+"btn"} idx= {index} onClick={() => handleGoToBoard(index)}></LogButton></li> )}
+                {history.map((value, index) => <li key={"li-" + index}><LogButton key={"btn-" + index} idx= {index} onClick={() => handleGoToBoard(index)}></LogButton></li> )}
             </LogButtonList>
         </LogContent>
        

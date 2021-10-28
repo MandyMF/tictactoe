@@ -22,7 +22,7 @@ const Button = styled.button`
 const Square = (props: any) => {
   
     return (
-        <Button data-testid ='square' disabled={props.value !== 0} onClick={(e) => props.onClick(props.line, props.col, e)} value={ props.value % 2 } >
+        <Button data-testid = {`square-${props.id}`}  disabled={props.value !== 0} onClick={(e) => props.onClick(props.line, props.col, e)} value={ props.value % 2 } >
            {(props.value === 0) ? null : props.value % 2 === 0 ? 'O' : 'X' }
         </Button>
     );

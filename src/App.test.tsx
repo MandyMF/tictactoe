@@ -11,8 +11,13 @@ describe('Start game testing', () => {
     const list_rows = App_c.queryAllByTestId('row');
     expect(list_rows).toHaveLength(3);
 
-    const list_squares = App_c.queryAllByTestId('square');
-    expect(list_squares).toHaveLength(9);
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        const list_squares = App_c.getAllByTestId(`square-${i}-${j}`);
+        expect(list_squares).toBeDefined();
+      }
+    }
+    
   })
 
   it('logs', () => {
@@ -24,13 +29,4 @@ describe('Start game testing', () => {
     const next_player = App_c.getByText("Next Player: X");
     expect(next_player).toBeDefined();
   })
-
- /*const App_c = render(<App />);
-  const text_c = App_c.getByText(/learn react/i)
-  //console.log("---------->", text_c)
-  expect(text_c).toBeInTheDocument();
-
-
-  //const linkElement = screen.getByText(/learn react/i);
-  //expect(linkElement).toBeInTheDocument();*/
 });

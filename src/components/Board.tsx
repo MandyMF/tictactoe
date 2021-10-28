@@ -34,7 +34,7 @@ const Board = (props: any) => {
     }
 
     return (
-        <BoardTable>
+        <BoardTable data-testid = 'board-table'>
             {renderBoard()}
         </BoardTable>
     )
